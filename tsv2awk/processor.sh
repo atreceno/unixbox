@@ -10,7 +10,7 @@ then
 fi
 
 # Generate Sports
-sport_file="14_discipline.txt"
+sport_file="data/14_discipline.txt"
 if [ -f $sport_file ]
 then
   echo "Generating dist/sports.tsv ..."
@@ -24,7 +24,7 @@ fi
 wc -l dist/sports.tsv
 
 # Generate Tournaments 
-tournament_file="23_event.txt"
+tournament_file="data/23_event.txt"
 description="Dominus Quixotus senex erat cui placebat libros de equitibus legere."
 location="London, UK"
 
@@ -62,7 +62,7 @@ rm dist/tmp.sed dist/trn.tsv
 # Another random way of counting CM events
 #awk 'BEGIN { count=0; }
 #$1 = /CM/ { count ++; }
-#END { print "Total = ",count; }' 23_event.txt
+#END { print "Total = ",count; }' data/23_event.txt
 
 # Import into MongoDB:
 #/usr/local/mongodb/bin/mongoimport -h ds059957.mongolab.com:59957 -d stadion -c sports -u $username -p --file dist/sports.tsv --type tsv --headerline
